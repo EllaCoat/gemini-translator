@@ -1,0 +1,31 @@
+{
+  "name": "gemini-translator",
+  "version": "0.1.0",
+  "description": "A CLI tool that translates text between Japanese and English using the Google Gemini API.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "tl": "node dist/cli.js",
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "lint": "eslint src/"
+  },
+  "keywords": [],
+  "author": "EllaCoat",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.2",
+    "eslint": "^10.3.0",
+    "globals": "^17.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.2"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "dotenv": "^17.4.2"
+  }
+}
