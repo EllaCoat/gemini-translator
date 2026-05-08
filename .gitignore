@@ -29,3 +29,6 @@ desktop.ini
 
 # Documentation folder
 docs/
+
+# Test folder
+tests/
