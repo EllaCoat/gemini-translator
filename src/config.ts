@@ -19,15 +19,15 @@ const DEFAULT_MODEL = 'gemini-2.5-flash-lite';
  * @throws {ConfigError} API キーが未設定または空文字の場合
  */
 export function loadConfig(): AppConfig {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (apiKey === undefined || apiKey.trim() === '') {
+  const apiKey = process.env.GEMINI_API_KEY?.trim() ?? '';
+  if (apiKey === '') {
     throw new ConfigError(
       'GEMINI_API_KEY が設定されていません。.env ファイルを確認してください。',
     );
   }
 
-  const rawModel = process.env.GEMINI_MODEL;
-  const model = rawModel === undefined || rawModel.trim() === '' ? DEFAULT_MODEL : rawModel;
+  const rawModel = process.env.GEMINI_MODEL?.trim() ?? '';
+  const model = rawModel === '' ? DEFAULT_MODEL : rawModel;
 
   return { apiKey, model };
 }
