@@ -102,7 +102,7 @@ export class Translator {
       const status = error.status;
       if (status === 401 || status === 403) {
         return new ApiKeyInvalidError(
-          'API キーが無効です。.env の GEMINI_API_KEY を確認してください。',
+          '.env で設定した GEMINI_API_KEY が Gemini に拒否されました。',
         );
       }
       if (status === 429) {

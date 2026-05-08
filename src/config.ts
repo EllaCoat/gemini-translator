@@ -22,7 +22,7 @@ export function loadConfig(): AppConfig {
   const apiKey = process.env.GEMINI_API_KEY?.trim() ?? '';
   if (apiKey === '') {
     throw new ConfigError(
-      'GEMINI_API_KEY が設定されていません。.env ファイルを確認してください。',
+      '.env に GEMINI_API_KEY が設定されていません。',
     );
   }
 
