@@ -90,7 +90,7 @@ export class Translator {
   private buildPrompt(text: string, options?: TranslateOptions): string {
     const target = options?.to;
     const targetMarker = target !== undefined ? `[target=${LANGUAGE_NAMES[target]}] ` : '';
-    return `<input>\n${targetMarker}${text}\n</input>`;
+    return `<input>${targetMarker}${text}</input>`;
   }
 
   /**
