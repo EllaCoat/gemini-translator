@@ -5,7 +5,9 @@ import { ConfigError } from './errors.js';
  * `loadConfig()` で環境変数から構築される。
  */
 export interface AppConfig {
+  /** Gemini API キー */
   apiKey: string;
+  /** 使用するモデル名（例: `gemini-2.5-flash-lite`） */
   model: string;
 }
 
@@ -14,7 +16,7 @@ const DEFAULT_MODEL = 'gemini-2.5-flash-lite';
 /**
  * 環境変数から設定を読み込んで AppConfig を返す。
  * `GEMINI_API_KEY` が未設定または空文字の場合は ConfigError を投げる。
- * `GEMINI_MODEL` が未設定または空文字の場合は DEFAULT_MODEL を使用。
+ * `GEMINI_MODEL` が未設定または空文字の場合は DEFAULT_gMODEL を使用。
  *
  * @throws {ConfigError} API キーが未設定または空文字の場合
  */

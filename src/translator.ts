@@ -5,6 +5,7 @@ import {
   type GenerativeModel,
 } from '@google/generative-ai';
 
+import type { AppConfig } from './config.js';
 import {
   ApiKeyInvalidError,
   EmptyInputError,
@@ -30,14 +31,6 @@ export interface TranslateOptions {
   to?: LanguageCode;
 }
 
-/** `Translator` のコンストラクタが受け取る Config Object */
-export interface TranslatorConfig {
-  /** Gemini API キー */
-  apiKey: string;
-  /** 使用するモデル名（例: `gemini-2.5-flash-lite`） */
-  model: string;
-}
-
 /**
  * Gemini API を使った翻訳機能を提供するクラス。
  * コンストラクタで API キーとモデル名を受け取り、
@@ -46,7 +39,7 @@ export interface TranslatorConfig {
 export class Translator {
   private readonly model: GenerativeModel;
 
-  constructor(config: TranslatorConfig) {
+  constructor(config: AppConfig) {
     const genAI = new GoogleGenerativeAI(config.apiKey);
     this.model = genAI.getGenerativeModel({
       model: config.model,
