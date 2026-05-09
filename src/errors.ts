@@ -42,3 +42,8 @@ export class RateLimitError extends ErrorTemplate {
 export class GeminiApiError extends ErrorTemplate {
   readonly code = 'GEMINI_API_ERROR';
 }
+
+/** CLI 引数のパースに失敗した場合のエラー */
+export class InvalidArgsError extends ErrorTemplate {
+  readonly code = 'INVALID_ARGS';
+}
