@@ -16,7 +16,7 @@ import {
 } from './errors.js';
 import { GENERATION_CONFIG, SYSTEM_INSTRUCTION } from './prompts.js';
 
-/** 言語定義 */
+/** 言語コード */
 const LANGUAGE_NAMES = {
   ja: 'Japanese',
   en: 'English',
@@ -24,6 +24,9 @@ const LANGUAGE_NAMES = {
 
 /** 翻訳の入出力で扱う言語コード */
 export type LanguageCode = keyof typeof LANGUAGE_NAMES;
+
+/** 対応する言語コードの配列（LANGUAGE_NAMES のキーから派生） */
+export const LANGUAGE_CODES = Object.keys(LANGUAGE_NAMES) as readonly LanguageCode[];
 
 /** `Translator.translate()` のオプション */
 export interface TranslateOptions {
