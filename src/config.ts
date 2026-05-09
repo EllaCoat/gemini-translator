@@ -16,7 +16,7 @@ const DEFAULT_MODEL = 'gemini-2.5-flash-lite';
 /**
  * 環境変数から設定を読み込んで AppConfig を返す。
  * `GEMINI_API_KEY` が未設定または空文字の場合は ConfigError を投げる。
- * `GEMINI_MODEL` が未設定または空文字の場合は DEFAULT_gMODEL を使用。
+ * `GEMINI_MODEL` が未設定または空文字の場合は DEFAULT_MODEL を使用。
  *
  * @throws {ConfigError} API キーが未設定または空文字の場合
  */
