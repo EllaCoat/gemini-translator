@@ -5,7 +5,9 @@ import { ConfigError } from './errors.js';
  * `loadConfig()` で環境変数から構築される。
  */
 export interface AppConfig {
+  /** Gemini API キー */
   apiKey: string;
+  /** 使用するモデル名（例: `gemini-2.5-flash-lite`） */
   model: string;
 }
 
