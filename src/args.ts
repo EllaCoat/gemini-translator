@@ -24,7 +24,7 @@ export function parseArgs(argv: string[], version: string): TranslateArgs {
   const program = createCommand(version);
 
   try {
-    // process.argv における先頭 2 要素を除外するために from: 'user' は必須。
+    // argv をユーザー引数として解釈させるため from: 'user' は必須。
     program.parse(argv, { from: 'user' });
   } catch (error) {
     if (error instanceof CommanderError) {
